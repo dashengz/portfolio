@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Jonathan Dasheng Zhang`,
+    description: `I'm an NYC-based Application Developer who's well-versed in front-end design and development as well as back-end scripting and database management.`,
+    author: `Jonathan Dasheng Zhang | contact@dashengz.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,17 +18,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jonathan Dasheng Zhang`,
+        short_name: `Dasheng Zhang`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#2E6696`,
+        theme_color: `#2E6696`,
+        display: `fullscreen`,
+        icon: `src/images/comic-portrait-hair.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

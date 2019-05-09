@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "dashengz-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Jonathan Dasheng Zhang's Portfolio Site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jonathan Dasheng Zhang <contact@dashengz.com>",
   "dependencies": {
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
@@ -22,7 +22,9 @@
     "prettier": "^1.17.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio",
+    "website"
   ],
   "license": "MIT",
   "scripts": {
@@ -35,9 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/dashengz/portfolio"
   }
 }

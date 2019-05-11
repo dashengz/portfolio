@@ -1,0 +1,46 @@
+// screen sizes
+$large-desktop: 1200px;
+$desktop: 992px;
+$tablet: 768px;
+$mobile: 576px;
+$small-mobile: 400px;
+
+:root {
+  // font
+  --sans-serif-header: 'Montserrat', sans-serif;
+  --sans-serif: 'Open Sans', sans-serif;
+  --serif: 'Lora', serif;
+  // color
+  --text-color: #707070;
+  --muted-color: #999999;
+  --primary-color: #2E6696;
+  --accent-color: #FF7047;
+  --primary-bright: #45A7DB;
+  --primary-light: #C4E9FD;
+  --accent-light: #FEFFC5;
+  --background-white: #ffffff;
+  --background-gray: #f9f9f9;
+  // size
+  --base-text-size: 16px;
+  --base-size: 2rem;
+  --small-size: .85em;
+  --half-size: calc(var(--base-size) / 2);
+  --third-size: calc(var(--base-size) / 3);
+  --quarter-size: calc(var(--base-size) / 4);
+  --double-size: calc(var(--base-size) * 2);
+  // specific sizes
+  --sidebar-width: 330px;
+
+  @include desktop-only {
+    --base-size: 1.75rem;
+  }
+  @include tablet-only {
+    --base-size: 1.5rem;
+  }
+  @include large-mobile-only {
+    --base-size: 1.25rem;
+  }
+  @include mobile {
+    --base-size: 1rem;
+  }
+}

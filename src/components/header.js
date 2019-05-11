@@ -1,12 +1,25 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Logo from "./logo";
-import './header.css';
+import {graphql, StaticQuery} from "gatsby"
+import Img from 'gatsby-image'
 
 const Header = () => (
     <header>
         <div>
-            <Logo />
+            <StaticQuery
+                query={graphql`
+                    query {
+                        logo: file(relativePath: { eq: "logo.png" }) {
+                            childImageSharp {
+                                fluid(maxWidth: 300) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                `}
+                render={data => <Img fluid={data.logo.childImageSharp.fluid} />}
+            />
             <div>
                 <nav>
                     <ul>
@@ -21,14 +34,14 @@ const Header = () => (
             </div>
         </div>
     </header>
-)
+);
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
     siteTitle: ``,
-}
+};
 
 export default Header

@@ -8,8 +8,7 @@ import PropTypes from "prop-types"
 import {StaticQuery, graphql} from "gatsby"
 
 import Header from "./header"
-import "./normalize.css"
-import "./layout.css"
+import '../styles/styles.scss'
 
 const Layout = ({children}) => (
     <StaticQuery
@@ -34,10 +33,10 @@ const Layout = ({children}) => (
             </>
         )}
     />
-)
+);
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout

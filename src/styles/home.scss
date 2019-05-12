@@ -1,0 +1,11 @@
+#hero {
+  position: relative;
+  .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: calc(var(--base-size) * 15);
+    overflow: hidden;
+  }
+}

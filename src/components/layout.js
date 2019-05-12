@@ -9,6 +9,7 @@ import {StaticQuery, graphql} from "gatsby"
 
 import Header from "./header"
 import '../styles/styles.scss'
+import Social from "./social";
 
 const Layout = ({children}) => (
     <StaticQuery
@@ -26,9 +27,12 @@ const Layout = ({children}) => (
                 <Header siteTitle={data.site.siteMetadata.title}/>
                 <main>{children}</main>
                 <footer>
-                    © Jonathan Dasheng Zhang &middot; {new Date().getFullYear()}
-                    <br/>
-                    Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+                    <Social />
+                    <div>
+                        © Jonathan Dasheng Zhang &middot; {new Date().getFullYear()}
+                        <br/>
+                        Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+                    </div>
                 </footer>
             </>
         )}

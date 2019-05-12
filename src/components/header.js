@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import {graphql, StaticQuery} from "gatsby"
 import Img from 'gatsby-image'
@@ -11,7 +10,7 @@ const Header = () => (
                     query {
                         logo: file(relativePath: { eq: "logo.png" }) {
                             childImageSharp {
-                                fluid(maxWidth: 300) {
+                                fluid(maxWidth: 400) {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -35,13 +34,5 @@ const Header = () => (
         </div>
     </header>
 );
-
-Header.propTypes = {
-    siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-    siteTitle: ``,
-};
 
 export default Header

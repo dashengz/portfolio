@@ -22,8 +22,12 @@ body {
 }
 
 main {
-  padding: 0 var(--base-size);
+  padding: 0;
   margin-left: var(--sidebar-width);
+}
+
+section {
+  padding: var(--base-size);
 }
 
 footer {

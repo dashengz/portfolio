@@ -24,12 +24,13 @@ $small-mobile: 400px;
   --base-text-size: 16px;
   --base-size: 2rem;
   --small-size: .85em;
+  --icon-size: 1.2rem;
   --half-size: calc(var(--base-size) / 2);
   --third-size: calc(var(--base-size) / 3);
   --quarter-size: calc(var(--base-size) / 4);
   --double-size: calc(var(--base-size) * 2);
   // specific sizes
-  --sidebar-width: 330px;
+  --sidebar-width: calc(var(--base-size) * 12);
 
   @include desktop-only {
     --base-size: 1.75rem;

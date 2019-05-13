@@ -1,5 +1,13 @@
 h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
   font-family: var(--sans-serif-header);
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3, h4, h5, h6 {
   font-weight: 600;
 }
 
@@ -49,6 +57,7 @@ a {
 }
 
 // fonts
+// noinspection CssUnknownTarget
 @font-face {
   font-family: 'portfolio';
   src:  url('/fonts/portfolio.eot');

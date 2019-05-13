@@ -27,18 +27,24 @@ main {
 }
 
 section {
-  padding: var(--base-size);
+  padding: var(--size-4);
 }
 
 footer {
   position: fixed;
   z-index: 200;
   width: var(--sidebar-width);
-  padding: var(--base-size);
+  padding: var(--size-4);
   bottom: 0;
   left: 0;
   color: var(--muted-color);
   font-size: var(--small-size);
   text-align: center;
   background-color: var(--background-gray);
+}
+
+hr {
+  margin: var(--size-2) 0;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
 }

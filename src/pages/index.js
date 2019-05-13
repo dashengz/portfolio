@@ -10,11 +10,19 @@ const IndexPage = ({data}) => (
     <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <div id="hero">
-            <div className="bg-img"><Img fluid={data.hero.childImageSharp.fluid}/></div>
-            <div className="intro-card">
-                <div className="intro-me"><Img fluid={data.me.childImageSharp.fluid}/></div>
-                <div className="intro-body" dangerouslySetInnerHTML={{__html: data.intro.html}} />
-                <div className="intro-social"><h3>Connect with me</h3><Social /></div>
+            <div className="hero-backdrop"></div>
+            <div className="hero-background"><Img fluid={data.hero.childImageSharp.fluid}/></div>
+            <div className="hero-inner">
+                <div className="container">
+                    <div className="intro-body">
+                        <div className="intro-me"><Img fluid={data.me.childImageSharp.fluid}/></div>
+                        <div className="intro-content">
+                            <div className="intro-bio" dangerouslySetInnerHTML={{__html: data.intro.html}}/>
+                            <a href="#contact" className="btn btn-primary">Contact</a>
+                        </div>
+                        <div className="intro-social"><h3>Connect with me</h3><Social/></div>
+                    </div>
+                </div>
             </div>
         </div>
     </Layout>

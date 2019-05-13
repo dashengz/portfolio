@@ -20,28 +20,36 @@ $small-mobile: 400px;
   --accent-light: #FEFFC5;
   --background-white: #ffffff;
   --background-gray: #f9f9f9;
+  --border-color: #dddddd;
+  // shadows
+  --light-shadow: 0 2px 5px 0 rgba(0,0,0,.1),2px 2px 10px 0 rgba(0,0,0,.08);
   // size
   --base-text-size: 16px;
-  --base-size: 2rem;
+  --base-size: .5rem;
   --small-size: .85em;
   --icon-size: 1.2rem;
-  --half-size: calc(var(--base-size) / 2);
-  --third-size: calc(var(--base-size) / 3);
-  --quarter-size: calc(var(--base-size) / 4);
-  --double-size: calc(var(--base-size) * 2);
+  --size-6: calc(var(--base-size) * 6);
+  --size-5: calc(var(--base-size) * 5);
+  --size-4: calc(var(--base-size) * 4);
+  --size-3: calc(var(--base-size) * 3);
+  --size-2: calc(var(--base-size) * 2);
+  --size-1: calc(var(--base-size));
+  --size-0: calc(var(--base-size) / 2);
   // specific sizes
-  --sidebar-width: calc(var(--base-size) * 12);
+  --container-padding: 0 calc(var(--base-size) * 8);
+  --sidebar-width: calc(var(--base-size) * 45);
+  --hero-height: calc(var(--base-size) * 50);
 
   @include desktop-only {
-    --base-size: 1.75rem;
+    --base-size: .4rem;
   }
   @include tablet-only {
-    --base-size: 1.5rem;
+    --base-size: .35rem;
   }
   @include large-mobile-only {
-    --base-size: 1.25rem;
+    --base-size: .3rem;
   }
   @include mobile {
-    --base-size: 1rem;
+    --base-size: .25rem;
   }
 }

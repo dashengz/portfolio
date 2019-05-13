@@ -9,14 +9,14 @@ header {
   box-shadow: 2px 5px 5px rgba(0,0,0,.08);
   z-index: 100;
   nav {
-    margin: var(--base-size);
+    margin: var(--size-4);
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
     li {
-      padding: var(--quarter-size) 0;
+      padding: var(--size-1) 0;
       a {
         color: var(--muted-color);
       }

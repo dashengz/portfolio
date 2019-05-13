@@ -8,3 +8,26 @@
   clip: rect(0,0,0,0);
   border: 0;
 }
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.btn {
+  display: inline-block;
+  white-space: nowrap;
+  padding: var(--size-1) var(--size-2);
+  user-select: none;
+  touch-action: manipulation;
+  &-primary {
+    background-color: var(--primary-bright);
+    color: white;
+    &:focus, &:hover {
+        background-color: var(--primary-color);
+    }
+  }
+}
+
+.container {
+  padding: var(--container-padding);
+}

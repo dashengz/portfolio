@@ -1,4 +1,3 @@
-const cssvar = require('postcss-css-variables');
 module.exports = {
     siteMetadata: {
         title: `Jonathan Dasheng Zhang`,
@@ -48,7 +47,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sass`,
             options: {
-                postCssPlugins: [cssvar()],
+                postCssPlugins: [],
                 precision: 8,
             },
         },

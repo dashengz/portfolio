@@ -9,42 +9,42 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
-  font-size: var(--base-text-size);
+  font-size: $base-text-size;
 }
 
 body {
-  font-family: var(--sans-serif);
+  font-family: $sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--text-color);
+  color: $text-color;
   text-align: left;
-  background-color: var(--background-white);
+  background-color: $background-white;
 }
 
 main {
   padding: 0;
-  margin-left: var(--sidebar-width);
+  margin-left: $sidebar-width;
 }
 
 section {
-  padding: var(--size-4);
+  padding: $section-vertical-padding 0;
 }
 
 footer {
   position: fixed;
   z-index: 200;
-  width: var(--sidebar-width);
-  padding: var(--size-4);
+  width: $sidebar-width;
+  padding: $size-4;
   bottom: 0;
   left: 0;
-  color: var(--muted-color);
-  font-size: var(--small-size);
+  color: $muted-color;
+  font-size: $small-size;
   text-align: center;
-  background-color: var(--background-gray);
+  background-color: $background-gray;
 }
 
 hr {
-  margin: var(--size-2) 0;
+  margin: $size-2 0;
   border: 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid $border-color;
 }

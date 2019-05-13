@@ -3,53 +3,42 @@ $large-desktop: 1200px;
 $desktop: 992px;
 $tablet: 768px;
 $mobile: 576px;
-$small-mobile: 400px;
 
-:root {
-  // font
-  --sans-serif-header: 'Montserrat', sans-serif;
-  --sans-serif: 'Open Sans', sans-serif;
-  --serif: 'Lora', serif;
-  // color
-  --text-color: #707070;
-  --muted-color: #999999;
-  --primary-color: #2E6696;
-  --accent-color: #FF7047;
-  --primary-bright: #45A7DB;
-  --primary-light: #C4E9FD;
-  --accent-light: #FEFFC5;
-  --background-white: #ffffff;
-  --background-gray: #f9f9f9;
-  --border-color: #dddddd;
-  // shadows
-  --light-shadow: 0 2px 5px 0 rgba(0,0,0,.1),2px 2px 10px 0 rgba(0,0,0,.08);
-  // size
-  --base-text-size: 16px;
-  --base-size: .5rem;
-  --small-size: .85em;
-  --icon-size: 1.2rem;
-  --size-6: calc(var(--base-size) * 6);
-  --size-5: calc(var(--base-size) * 5);
-  --size-4: calc(var(--base-size) * 4);
-  --size-3: calc(var(--base-size) * 3);
-  --size-2: calc(var(--base-size) * 2);
-  --size-1: calc(var(--base-size));
-  --size-0: calc(var(--base-size) / 2);
-  // specific sizes
-  --container-padding: 0 calc(var(--base-size) * 8);
-  --sidebar-width: calc(var(--base-size) * 45);
-  --hero-height: calc(var(--base-size) * 50);
+// font
+$sans-serif-header: 'Montserrat', sans-serif;
+$sans-serif: 'Open Sans', sans-serif;
+$serif: 'Lora', serif;
 
-  @include desktop-only {
-    --base-size: .4rem;
-  }
-  @include tablet-only {
-    --base-size: .35rem;
-  }
-  @include large-mobile-only {
-    --base-size: .3rem;
-  }
-  @include mobile {
-    --base-size: .25rem;
-  }
-}
+// color
+$text-color: #707070;
+$muted-color: #999999;
+$primary-color: #2E6696;
+$accent-color: #FF7047;
+$primary-bright: #45A7DB;
+$primary-light: #C4E9FD;
+$accent-light: #FEFFC5;
+$background-white: #ffffff;
+$background-gray: #f9f9f9;
+$border-color: #dddddd;
+
+// shadows
+$light-shadow: 0 2px 5px 0 rgba(0,0,0,.1),2px 2px 10px 0 rgba(0,0,0,.08);
+
+// size
+$base-text-size: 16px;
+$base-size: .5rem;
+$small-size: .85em;
+$icon-size: 1.2rem;
+$size-6: $base-size * 6;
+$size-5: $base-size * 5;
+$size-4: $base-size * 4;
+$size-3: $base-size * 3;
+$size-2: $base-size * 2;
+$size-1: $base-size;
+$size-0: $base-size / 2;
+
+// specific sizes
+$container-horizontal-padding: $base-size * 8;
+$section-vertical-padding: $base-size * 6;
+$sidebar-width: $base-size * 45;
+$hero-height: $base-size * 50;

@@ -1,24 +1,24 @@
 header {
   position: fixed;
-  width: var(--sidebar-width);
+  width: $sidebar-width;
   left: 0;
   top: 0;
-  background-color: var(--background-white);
+  background-color: $background-white;
   height: 100%;
-  padding: 2em;
+  padding: $size-4;
   box-shadow: 2px 5px 5px rgba(0,0,0,.08);
   z-index: 100;
   nav {
-    margin: var(--size-4);
+    margin: $size-4;
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
     li {
-      padding: var(--size-1) 0;
+      padding: $size-1 0;
       a {
-        color: var(--muted-color);
+        color: $muted-color;
       }
     }
   }

@@ -10,24 +10,24 @@
 }
 
 .highlight {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 
 .btn {
   display: inline-block;
   white-space: nowrap;
-  padding: var(--size-1) var(--size-2);
+  padding: $size-1 $size-2;
   user-select: none;
   touch-action: manipulation;
   &-primary {
-    background-color: var(--primary-bright);
+    background-color: $primary-bright;
     color: white;
     &:focus, &:hover {
-        background-color: var(--primary-color);
+        background-color: $primary-color;
     }
   }
 }
 
 .container {
-  padding: var(--container-padding);
+  padding: 0 $container-horizontal-padding;
 }

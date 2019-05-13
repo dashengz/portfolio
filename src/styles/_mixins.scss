@@ -40,3 +40,15 @@
     @content;
   }
 }
+
+@mixin lt-tablet {
+  @media (max-width: #{$tablet - .5px}) {
+    @content;
+  }
+}
+
+@mixin gt-tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}

@@ -9,8 +9,8 @@ import Social from "../components/social";
 const IndexPage = ({data}) => (
     <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-        <div id="hero">
-            <div className="hero-backdrop"></div>
+        <section id="hero">
+            <div className="hero-backdrop">{``}</div>
             <div className="hero-background"><Img fluid={data.hero.childImageSharp.fluid}/></div>
             <div className="hero-inner">
                 <div className="container">
@@ -24,7 +24,12 @@ const IndexPage = ({data}) => (
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <section id="cv">
+            <div className="container">
+                <div className="cv-background">{``}</div>
+            </div>
+        </section>
     </Layout>
 );
 

@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-color);
-  font-family: var(--sans-serif-header);
+  color: $primary-color;
+  font-family: $sans-serif-header;
 }
 
 h1, h2 {
@@ -46,13 +46,13 @@ p {
 }
 
 a {
-  color: var(--primary-bright);
-  font-family: var(--sans-serif-header);
+  color: $primary-bright;
+  font-family: $sans-serif-header;
   text-decoration: none;
   font-weight: 500;
   padding: 2px;
   &:focus, &:hover {
-    background-color: var(--accent-light);
+    background-color: $accent-light;
   }
 }
 
@@ -78,7 +78,7 @@ a {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  font-size: var(--icon-size);
+  font-size: $icon-size;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;

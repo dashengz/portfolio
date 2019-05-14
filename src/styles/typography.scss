@@ -13,36 +13,71 @@ h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.6rem;
-  margin: 1rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": 1rem,
+          "margin-bottom": 1rem
+  ));
 }
 
 h2 {
   font-size: 1.4rem;
-  margin: .8rem 0 .5rem;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": .8rem,
+          "margin-bottom": .5rem
+  ));
 }
 
 h3 {
   font-size: 1.2rem;
-  margin: .5rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": .5rem,
+          "margin-bottom": .5rem
+  ));
 }
 
 h4 {
   font-size: 1rem;
-  margin: .5rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": .5rem,
+          "margin-bottom": .5rem
+  ));
 }
 
 h5 {
   font-size: .9rem;
-  margin: .3rem 0 .5rem;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": .3rem,
+          "margin-bottom": .5rem
+  ));
 }
 
 h6 {
   font-size: .85rem;
-  margin: .3rem 0 .5rem;
+  margin-left: 0;
+  margin-right: 0;
+  @include scale-styles((
+          "margin-top": .3rem,
+          "margin-bottom": .5rem
+  ));
 }
 
 p {
-  margin: 0 0 .85rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  @include scale-styles((
+          "margin-bottom": .85rem
+  ));
 }
 
 a {
@@ -50,7 +85,10 @@ a {
   font-family: $sans-serif-header;
   text-decoration: none;
   font-weight: 500;
-  padding: 2px;
+  @include scale-styles((
+          "padding": 2px
+  ));
+
   &:focus, &:hover {
     background-color: $accent-light;
   }
@@ -60,8 +98,8 @@ a {
 // noinspection CssUnknownTarget
 @font-face {
   font-family: 'portfolio';
-  src:  url('/fonts/portfolio.eot');
-  src:  url('/fonts/portfolio.eot#iefix') format('embedded-opentype'),
+  src: url('/fonts/portfolio.eot');
+  src: url('/fonts/portfolio.eot#iefix') format('embedded-opentype'),
   url('/fonts/portfolio.ttf') format('truetype'),
   url('/fonts/portfolio.woff') format('woff'),
   url('/fonts/portfolio.svg#portfolio') format('svg');
@@ -70,7 +108,7 @@ a {
 }
 
 .icon {
-  /* use !important to prevent issues with browser extensions that change fonts */
+  // noinspection CssNoGenericFontName
   font-family: 'portfolio' !important;
   speak: none;
   font-style: normal;
@@ -78,7 +116,9 @@ a {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  font-size: $icon-size;
+  @include scale-styles((
+          "font-size": $icon-size
+  ));
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -87,12 +127,15 @@ a {
   &-twitter:before {
     content: "\ea96";
   }
+
   &-github:before {
     content: "\eab0";
   }
+
   &-linkedin:before {
     content: "\eac9";
   }
+
   &-codepen:before {
     content: "\eae8";
   }

@@ -9,7 +9,13 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
-  font-size: $base-text-size;
+  font-size: $root-size;
+  @include tablet {
+    font-size: $root-size-tablet;
+  }
+  @include mobile {
+    font-size: $root-size-mobile;
+  }
 }
 
 body {
@@ -23,28 +29,42 @@ body {
 
 main {
   padding: 0;
-  margin-left: $sidebar-width;
+  @include scale-styles((
+          "margin-left": $sidebar-width
+  ));
 }
 
 section {
-  padding: $section-vertical-padding 0;
+  padding-left: 0;
+  padding-right: 0;
+  @include scale-styles((
+          "padding-top": $section-vertical-padding,
+          "padding-bottom": $section-vertical-padding
+  ));
 }
 
 footer {
   position: fixed;
   z-index: 200;
-  width: $sidebar-width;
-  padding: $size-4;
   bottom: 0;
   left: 0;
   color: $muted-color;
   font-size: $small-size;
   text-align: center;
   background-color: $background-gray;
+  @include scale-styles((
+          "width": $sidebar-width,
+          "padding": $size-4
+  ));
 }
 
 hr {
-  margin: $size-2 0;
+  margin-left: 0;
+  margin-right: 0;
   border: 0;
   border-bottom: 1px solid $border-color;
+  @include scale-styles((
+          "margin-top": $size-2,
+          "margin-bottom": $size-2
+  ));
 }

@@ -1,7 +1,9 @@
 .social {
   a {
     display: inline-block;
-    padding: $size-0;
     line-height: 1;
+    @include scale-styles((
+            "padding": $size-0
+    ));
   }
 }

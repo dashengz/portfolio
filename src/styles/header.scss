@@ -1,22 +1,35 @@
 header {
   position: fixed;
-  width: $sidebar-width;
   left: 0;
   top: 0;
   background-color: $background-white;
   height: 100%;
-  padding: $size-4;
-  box-shadow: 2px 5px 5px rgba(0,0,0,.08);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, .08);
   z-index: 100;
+  @include scale-styles((
+          "width": $sidebar-width,
+          "padding": $size-4
+  ));
+
   nav {
-    margin: $size-4;
+    @include scale-styles((
+            "margin": $size-4
+    ));
+
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     li {
-      padding: $size-1 0;
+      padding-left: 0;
+      padding-right: 0;
+      @include scale-styles((
+              "padding-top": $size-1,
+              "padding-bottom": $size-1
+      ));
+
       a {
         color: $muted-color;
       }

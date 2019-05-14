@@ -5,7 +5,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -16,18 +16,30 @@
 .btn {
   display: inline-block;
   white-space: nowrap;
-  padding: $size-1 $size-2;
   user-select: none;
   touch-action: manipulation;
+  @include scale-styles((
+          "padding-top": $size-1,
+          "padding-right": $size-2,
+          "padding-bottom": $size-1,
+          "padding-left": $size-2
+  ));
+
   &-primary {
     background-color: $primary-bright;
     color: white;
+
     &:focus, &:hover {
-        background-color: $primary-color;
+      background-color: $primary-color;
     }
   }
 }
 
 .container {
-  padding: 0 $container-horizontal-padding;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include scale-styles((
+          "padding-right": $container-horizontal-padding,
+          "padding-left": $container-horizontal-padding
+  ));
 }

@@ -52,3 +52,33 @@
     @content;
   }
 }
+
+// scaling
+@mixin scale-styles($styles, $viewports: ('xl' ,'lg', 'md', 'sm')) {
+  @if (null != index($viewports, 'xl')) {
+    @each $name, $val in $styles {
+      #{$name}: $val;
+    }
+  }
+  @if (null != index($viewports, 'lg')) {
+    @include desktop {
+      @each $name, $val in $styles {
+        #{$name}: $val * map_get($scales, 'lg');
+      }
+    }
+  }
+  @if (null != index($viewports, 'md')) {
+    @include tablet {
+      @each $name, $val in $styles {
+        #{$name}: $val * map_get($scales, 'md');
+      }
+    }
+  }
+  @if (null != index($viewports, 'sm')) {
+    @include large-mobile {
+      @each $name, $val in $styles {
+        #{$name}: $val * map_get($scales, 'sm');
+      }
+    }
+  }
+}

@@ -7,39 +7,52 @@
       top: 0;
       left: 0;
       width: 100%;
-      max-height: $hero-height;
       overflow: hidden;
+      @include scale-styles((
+              "max-height": $hero-height
+      ));
     }
 
     &-inner {
-      padding-top: $size-1 * 8;
-      padding-bottom: $size-1;
+      @include scale-styles((
+              "padding-top": $size-1 * 8,
+              "padding-bottom": $size-1
+      ));
     }
 
     &-backdrop {
-      height: 300px;
       position: absolute;
-      right: $size-1 * 7;
-      bottom: $size-6;
-      left: $size-1 * 35;
+      top: 0;
       background-image: url(../images/blue-line.svg);
+      @include scale-styles((
+              "right": $size-1 * 7,
+              "left": $size-1 * 35,
+              "bottom": $size-6
+      ));
     }
   }
 
   .intro {
     &-body {
       background-color: $background-white;
-      margin-left: $size-1 * 26;
-      padding: $size-4 $size-4 $size-4 $size-1 * 10;
       position: relative;
+      @include scale-styles((
+              "margin-left": $size-1 * 26,
+              "padding-top": $size-4,
+              "padding-right": $size-4,
+              "padding-bottom": $size-4,
+              "padding-left": $size-1 * 10
+      ));
     }
 
     &-me {
-      width: $size-1 * 32;
       position: absolute;
-      left: $size-1 * -26;
       top: 0;
       box-shadow: $light-shadow;
+      @include scale-styles((
+              "width": $size-1 * 32,
+              "left": $size-1 * -26
+      ));
     }
 
     &-content {
@@ -47,7 +60,9 @@
     }
 
     &-bio {
-      margin-bottom: $size-3;
+      @include scale-styles((
+              "margin-bottom": $size-3
+      ));
 
       h1 {
         color: $accent-color;
@@ -58,11 +73,13 @@
     &-social {
       background-color: $background-white;
       position: absolute;
-      right: $size-4;
-      bottom: -1 * $size-4;
-      padding: $size-2;
       box-shadow: $light-shadow;
       text-align: center;
+      @include scale-styles((
+              "right": $size-4,
+              "bottom": -1 * $size-4,
+              "padding": $size-2
+      ));
 
       h3 {
         margin-top: 0;

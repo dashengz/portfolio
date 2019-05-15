@@ -87,3 +87,62 @@
     }
   }
 }
+
+#cv {
+  .container {
+    position: relative;
+  }
+  .cv-background {
+    position: absolute;
+    bottom: 0;
+    top: 5rem;
+    left: 2rem;
+    right: 2rem;
+    background-image: url(../images/blue-dot.svg);
+  }
+  .cv-cards {
+    display: flex;
+    position: relative;
+    @include scale-styles((
+            "margin-left": -$size-2,
+            "margin-right": -$size-2,
+            "padding-bottom": $size-4
+    ));
+
+    > div {
+      flex: 1;
+      box-shadow: $light-shadow;
+      background-color: $background-white;
+      @include scale-styles((
+              "margin-left": $size-2,
+              "margin-right": $size-2
+      ));
+      &:last-child {
+        h3 {
+          background-color: $accent-color;
+        }
+      }
+      h3 {
+        text-align: center;
+        color: $background-white;
+        margin: 0;
+        background-color: $primary-bright;
+        @include scale-styles((
+                "padding": $size-1
+        ));
+      }
+      > div {
+        @include scale-styles((
+                "padding": $size-2
+        ));
+      }
+      ul {
+        li {
+          @include scale-styles((
+                  "margin-bottom": $size-1
+          ));
+        }
+      }
+    }
+  }
+}

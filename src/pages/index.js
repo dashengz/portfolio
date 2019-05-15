@@ -28,6 +28,10 @@ const IndexPage = ({data}) => (
         <section id="cv">
             <div className="container">
                 <div className="cv-background">{``}</div>
+                <div className="cv-cards">
+                    <div dangerouslySetInnerHTML={{__html: data.education.html}} />
+                    <div dangerouslySetInnerHTML={{__html: data.skills.html}}/>
+                </div>
             </div>
         </section>
     </Layout>
@@ -52,6 +56,12 @@ export const query = graphql`
             }
         }
         intro: markdownRemark(frontmatter: {id: {eq: "intro"}}) {
+            html
+        }
+        education: markdownRemark(frontmatter: {id: {eq: "education"}}) {
+            html
+        }
+        skills: markdownRemark(frontmatter: {id: {eq: "skills"}}) {
             html
         }
     }

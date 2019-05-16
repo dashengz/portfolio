@@ -214,7 +214,7 @@
     }
     &-background {
       flex: 1;
-      opacity: .3;
+      opacity: .5;
       z-index: 1;
       @include scale-styles((
               "bottom": -$size-6

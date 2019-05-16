@@ -68,8 +68,9 @@ hr {
   margin-left: 0;
   margin-right: 0;
   border: 0;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 2px solid $primary-bright;
   @include scale-styles((
+          "width": $size-6,
           "margin-top": $size-2,
           "margin-bottom": $size-2
   ));

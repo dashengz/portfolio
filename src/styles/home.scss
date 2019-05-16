@@ -92,6 +92,7 @@
   .container {
     position: relative;
   }
+
   .cv-background {
     position: absolute;
     bottom: 0;
@@ -100,6 +101,7 @@
     right: 2rem;
     background-image: url(../images/blue-dot.svg);
   }
+
   .cv-cards {
     display: flex;
     position: relative;
@@ -117,11 +119,13 @@
               "margin-left": $size-2,
               "margin-right": $size-2
       ));
+
       &:last-child {
         h3 {
           background-color: $accent-color;
         }
       }
+
       h3 {
         text-align: center;
         color: $background-white;
@@ -131,11 +135,13 @@
                 "padding": $size-1
         ));
       }
+
       > div {
         @include scale-styles((
                 "padding": $size-2
         ));
       }
+
       ul {
         li {
           @include scale-styles((
@@ -148,5 +154,105 @@
 }
 
 #experiences {
-
+  .timeline-items {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 6px;
+      top: 0;
+      left: calc(50% - 3px);
+      background-color: $primary-light;
+      z-index: 5;
+    }
+  }
+  .timeline {
+    $right: '#experiences .timeline[data-align="right"]';
+    $left: '#experiences .timeline[data-align="left"]';
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: white;
+      top: 0;
+      left: calc(50% - 12px);
+      z-index: 10;
+      border: 5px solid $primary-light;
+      border-radius: 50%;
+    }
+    &-label {
+      position: absolute;
+      font-family: $sans-serif-header;
+      font-weight: 600;
+      color: $primary-bright;
+      @include scale-styles((
+              "font-size": 1.1rem
+      ));
+      @include scale-calc("width", "50% - ", "", $size-6);
+      @at-root #{$right} .timeline-label {
+        text-align: right;
+        left: 0;
+      }
+      @at-root #{$left} .timeline-label {
+        text-align: left;
+        right: 0;
+      }
+    }
+    &-body {
+      display: flex;
+      align-items: flex-end;
+      @include scale-styles((
+              "padding-top": $size-6,
+              "padding-bottom": $size-6 * 2
+      ));
+      > div {
+        position: relative;
+      }
+    }
+    &-background {
+      flex: 1;
+      opacity: .3;
+      z-index: 1;
+      @include scale-styles((
+              "bottom": -$size-6
+      ));
+      @at-root #{$right} .timeline-background {
+        @include scale-styles((
+                "left": $size-6,
+                "margin-left": $size-2 * 8
+        ));
+      }
+      @at-root #{$left} .timeline-background {
+        order: 2;
+        @include scale-styles((
+                "right": $size-6,
+                "margin-right": $size-2 * 8
+        ));
+      }
+    }
+    &-content {
+      background-color: $background-white;
+      box-shadow: $light-shadow;
+      z-index: 2;
+      @include scale-styles((
+              "padding-top": $size-2,
+              "padding-right": $size-4,
+              "padding-bottom": $size-2,
+              "padding-left": $size-4
+      ));
+      @include scale-calc("width", "50% - ", "", $size-6);
+      @at-root #{$left} .timeline-content {
+        order: 1;
+      }
+      h3 {
+        color: $accent-color;
+      }
+      h4 {
+        color: $text-color;
+      }
+    }
+  }
 }

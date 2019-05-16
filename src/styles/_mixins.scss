@@ -54,7 +54,7 @@
 }
 
 // scaling
-@mixin scale-styles($styles, $viewports: ('xl' ,'lg', 'md', 'sm')) {
+@mixin scale-styles($styles, $viewports: $viewports) {
   @if (null != index($viewports, 'xl')) {
     @each $name, $val in $styles {
       #{$name}: $val;
@@ -79,6 +79,27 @@
       @each $name, $val in $styles {
         #{$name}: $val * map_get($scales, 'sm');
       }
+    }
+  }
+}
+
+@mixin scale-calc($name, $before, $after, $val, $viewports: $viewports) {
+  @if (null != index($viewports, 'xl')) {
+    #{$name}: calc(#{$before + $val + $after});
+  }
+  @if (null != index($viewports, 'lg')) {
+    @include desktop {
+      #{$name}: calc(#{$before + $val * map_get($scales, 'lg') + $after});
+    }
+  }
+  @if (null != index($viewports, 'md')) {
+    @include tablet {
+      #{$name}: calc(#{$before + $val * map_get($scales, 'md') + $after});
+    }
+  }
+  @if (null != index($viewports, 'sm')) {
+    @include large-mobile {
+      #{$name}: calc(#{$before + $val * map_get($scales, 'sm') + $after});
     }
   }
 }

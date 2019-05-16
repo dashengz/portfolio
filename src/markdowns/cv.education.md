@@ -1,6 +1,8 @@
 ---
 
 id: "education"
+category: "cv"
+sequence: 1
 
 ---
 

@@ -1,6 +1,8 @@
 ---
 
 id: "skills"
+category: "cv"
+sequence: 2
 
 ---
 

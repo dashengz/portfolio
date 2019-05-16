@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Social from "../components/social";
+import Timeline from "../components/timeline";
 
 const IndexPage = ({data}) => (
     <Layout>
@@ -27,10 +28,36 @@ const IndexPage = ({data}) => (
         </section>
         <section id="cv">
             <div className="container">
+                <h2>CV</h2>
                 <div className="cv-background">{``}</div>
                 <div className="cv-cards">
-                    <div dangerouslySetInnerHTML={{__html: data.education.html}} />
-                    <div dangerouslySetInnerHTML={{__html: data.skills.html}}/>
+                    {
+                        data.cv.edges.map(e =>
+                            <div
+                                key={e.node.frontmatter.id}
+                                dangerouslySetInnerHTML={{__html: e.node.html}}
+                            />)
+                    }
+                </div>
+            </div>
+        </section>
+        <section id="experiences">
+            <div className="container">
+                <h2>Experiences</h2>
+                <div className="timeline-items">
+                    {
+                        data.experiences.edges.map((e, i) => {
+                            const meta = e.node.frontmatter;
+                            const img = data.experiencesBackgrounds.edges.filter(k => k.node.name === [meta.category, meta.id].join('.'));
+                            return <Timeline
+                                key={meta.id}
+                                image={img.length ? img[0].node.childImageSharp.fluid : null}
+                                label={meta.label}
+                                content={e.node.html}
+                                alignRight={i % 2 === 0}
+                            />;
+                        })
+                    }
                 </div>
             </div>
         </section>
@@ -58,11 +85,60 @@ export const query = graphql`
         intro: markdownRemark(frontmatter: {id: {eq: "intro"}}) {
             html
         }
-        education: markdownRemark(frontmatter: {id: {eq: "education"}}) {
-            html
+        cv: allMarkdownRemark(
+            filter: {
+                frontmatter: {
+                    category: { eq: "cv" }
+                }
+            },
+            sort: {
+                fields: [frontmatter___sequence]
+                order: ASC
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        id
+                    }
+                    html
+                }
+            }
         }
-        skills: markdownRemark(frontmatter: {id: {eq: "skills"}}) {
-            html
+        experiences: allMarkdownRemark(
+            filter: {
+                frontmatter: {
+                    category: { eq: "experiences" }
+                }
+            },
+            sort: {
+                fields: [frontmatter___sequence]
+                order: ASC
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        id
+                        category
+                        label
+                        sequence
+                    }
+                    html
+                }
+            }
+        }
+        experiencesBackgrounds: allFile(filter: {relativePath: { regex: "/experiences(.*)jpg/" }}) {
+            edges {
+                node {
+                    name
+                    childImageSharp {
+                        fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
         }
     }
 `;

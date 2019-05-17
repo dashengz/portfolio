@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Social from "../components/social";
 import Timeline from "../components/timeline";
+import Card from "../components/card";
 
 const IndexPage = ({data}) => (
     <Layout>
@@ -55,6 +56,42 @@ const IndexPage = ({data}) => (
                                 label={meta.label}
                                 content={e.node.html}
                                 alignRight={i % 2 === 0}
+                            />;
+                        })
+                    }
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div className="container">
+                <h2>Portfolio</h2>
+                <div className="filters">
+                    <ul>
+                        <li className="active"><a href="?type=All">All</a></li>
+                        {
+                            data.portfolio.edges
+                                .reduce((prev, cur) => {
+                                    const type = cur.node.frontmatter.type;
+                                    return prev.indexOf(type) !== -1 ? prev : prev.concat(type);
+                                }, [])
+                                .sort()
+                                .map(e =>
+                                    <li key={e}><a href={'?type=' + encodeURIComponent(e)}>{e}</a></li>
+                                )
+                        }
+                    </ul>
+                </div>
+                <div className="portfolio-cards">
+                    {
+                        data.portfolio.edges.map(e => {
+                            const meta = e.node.frontmatter;
+                            const thumb = data.portfolioThumbnails.edges.filter(k => k.node.name === [meta.category, meta.id].join('.'));
+                            return <Card
+                                key={meta.id}
+                                id={meta.id}
+                                title={meta.title}
+                                blurb={meta.blurb}
+                                thumbnail={thumb.length ? thumb[0].node.childImageSharp.fluid : null}
                             />;
                         })
                     }
@@ -134,6 +171,43 @@ export const query = graphql`
                     name
                     childImageSharp {
                         fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        portfolio: allMarkdownRemark(
+            filter: {
+                frontmatter: {
+                    category: { eq: "portfolio" }
+                }
+            },
+            sort: {
+                fields: [frontmatter___sequence]
+                order: ASC
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        id
+                        category
+                        type
+                        sequence
+                        title
+                        blurb
+                    }
+                    html
+                }
+            }
+        }
+        portfolioThumbnails: allFile(filter: {relativePath: { regex: "/portfolio(.*)png/" }}) {
+            edges {
+                node {
+                    name
+                    childImageSharp {
+                        fluid(maxWidth: 600) {
                             ...GatsbyImageSharpFluid
                         }
                     }

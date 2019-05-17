@@ -156,6 +156,7 @@
 #experiences {
   .timeline-items {
     position: relative;
+
     &:after {
       position: absolute;
       content: '';
@@ -167,10 +168,12 @@
       z-index: 5;
     }
   }
+
   .timeline {
     $right: '#experiences .timeline[data-align="right"]';
     $left: '#experiences .timeline[data-align="left"]';
     position: relative;
+
     &:after {
       content: '';
       position: absolute;
@@ -183,6 +186,7 @@
       border: 5px solid $primary-light;
       border-radius: 50%;
     }
+
     &-label {
       position: absolute;
       font-family: $sans-serif-header;
@@ -201,6 +205,7 @@
         right: 0;
       }
     }
+
     &-body {
       display: flex;
       align-items: flex-end;
@@ -208,10 +213,12 @@
               "padding-top": $size-6,
               "padding-bottom": $size-6 * 2
       ));
+
       > div {
         position: relative;
       }
     }
+
     &-background {
       flex: 1;
       opacity: .5;
@@ -233,6 +240,7 @@
         ));
       }
     }
+
     &-content {
       background-color: $background-white;
       box-shadow: $light-shadow;
@@ -250,8 +258,96 @@
       h3 {
         color: $accent-color;
       }
+
       h4 {
         color: $text-color;
+      }
+    }
+  }
+}
+
+#portfolio {
+  .filters {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+
+      li {
+        &.active {
+          a {
+            color: $accent-color;
+          }
+        }
+
+        a {
+          display: block;
+          font-weight: 600;
+          @include scale-styles((
+                  "padding-top": $size-0,
+                  "padding-right": $size-1,
+                  "padding-bottom": $size-0,
+                  "padding-left": $size-1
+          ));
+        }
+      }
+    }
+  }
+
+
+  .portfolio-cards {
+    display: flex;
+    flex-flow: row wrap;
+    @include scale-styles((
+            "margin-left": -$size-2,
+            "margin-right": -$size-2
+    ));
+
+    .card {
+      width: 33.3333%;
+      @include scale-styles((
+              "padding": $size-2
+      ));
+
+      &-body {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: $light-shadow;
+        @include scale-styles((
+                "padding": $size-2
+        ));
+      }
+
+      &-content {
+        position: relative;
+        z-index: 2;
+        text-align: right;
+        @include scale-styles((
+                "margin-left": $size-4
+        ));
+
+        h3 {
+          color: $accent-color;
+        }
+
+        .card-blurb {
+          color: $muted-color;
+          font-size: $small-size;
+          @include scale-styles((
+                  "padding-bottom": $size-6
+          ))
+        }
+      }
+
+      &-thumbnail {
+        position: absolute;
+        left: -30%;
+        top: 70%;
+        width: 100%;
+        transform: rotate(20deg);
+        z-index: 1;
       }
     }
   }

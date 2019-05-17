@@ -295,7 +295,6 @@
     }
   }
 
-
   .portfolio-cards {
     display: flex;
     flex-flow: row wrap;
@@ -314,6 +313,7 @@
         position: relative;
         height: 100%;
         overflow: hidden;
+        background-color: $background-white;
         box-shadow: $light-shadow;
         @include scale-styles((
                 "padding": $size-2
@@ -348,6 +348,37 @@
         width: 100%;
         transform: rotate(20deg);
         z-index: 1;
+      }
+    }
+  }
+}
+
+#contact {
+  position: relative;
+
+  .contact {
+    &-background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-height: 300px;
+      overflow: hidden;
+    }
+
+    &-card {
+      min-height: 300px;
+      margin-left: auto;
+      width: 60%;
+      position: relative;
+      background-color: $background-white;
+      box-shadow: $light-shadow;
+      @include scale-styles((
+              "padding": $size-4
+      ));
+
+      h2 {
+        text-align: left;
       }
     }
   }

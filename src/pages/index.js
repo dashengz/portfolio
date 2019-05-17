@@ -98,6 +98,17 @@ const IndexPage = ({data}) => (
                 </div>
             </div>
         </section>
+        <section id="contact">
+            <div className="contact-background">
+                <div className="contact-map"><Img fluid={data.contact.childImageSharp.fluid} /></div>
+            </div>
+            <div className="container">
+                <div className="contact-card">
+                    <h2>Contact</h2>
+                    {``}
+                </div>
+            </div>
+        </section>
     </Layout>
 );
 
@@ -211,6 +222,13 @@ export const query = graphql`
                             ...GatsbyImageSharpFluid
                         }
                     }
+                }
+            }
+        }
+        contact: file(relativePath: { eq: "contact-map.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 1500) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }

@@ -155,6 +155,10 @@ a {
       content: "\e97f";
     }
   }
+
+  &-arrow-right-long:before {
+    content: "\e900";
+  }
 }
 
 @keyframes spin {

@@ -26,7 +26,7 @@ const Header = () => (
                         <li><a href="#cv">CV</a></li>
                         <li><a href="#experiences">Experiences</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="https://blog.dashengz.com">Blog</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>

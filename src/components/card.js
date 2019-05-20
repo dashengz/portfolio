@@ -7,7 +7,10 @@ const Card = ({id, title, blurb, thumbnail}) => (
         <div className="card-body">
             <div className="card-content">
                 <h3>{title}</h3>
-                {blurb ? <div className="card-blurb">{blurb}</div> : null}
+                {blurb ? (
+                    <div className="card-blurb">{blurb}
+                        <div className="card-action"><a href={'?portfolio=' + id}>View Project Detail</a></div>
+                    </div>) : null}
             </div>
             {thumbnail ? <div className="card-thumbnail"><Img fluid={thumbnail}/></div> : null}
         </div>

@@ -315,9 +315,26 @@
         overflow: hidden;
         background-color: $background-white;
         box-shadow: $light-shadow;
-        @include scale-styles((
-                "padding": $size-2
-        ));
+        bottom: 0;
+        transition: box-shadow .3s ease, bottom .3s ease;
+        &:focus, &:hover {
+          box-shadow: $hover-shadow;
+          bottom: 5px;
+          .card-thumbnail {
+            transform: rotate(0deg) translate(30%, -70%);
+            opacity: .1;
+          }
+          .card-action a {
+            @include scale-styles((
+                    "right": $size-2
+            ));
+            &:after {
+              @include scale-styles((
+                      "right": -$size-2
+              ));
+            }
+          }
+        }
       }
 
       &-content {
@@ -325,7 +342,8 @@
         z-index: 2;
         text-align: right;
         @include scale-styles((
-                "margin-left": $size-4
+                "margin-left": $size-4,
+                "padding": $size-2
         ));
 
         h3 {
@@ -335,9 +353,34 @@
         .card-blurb {
           color: $muted-color;
           font-size: $small-size;
+          overflow: hidden;
           @include scale-styles((
                   "padding-bottom": $size-6
           ))
+        }
+
+        .card-action {
+          @include scale-styles((
+                  "font-size": $size-2,
+                  "margin-top": $size-1
+          ));
+
+          a {
+            position: relative;
+            right: 0;
+            transition: right .3s ease;
+            &:after {
+              content: '\e900';
+              font-family: 'portfolio';
+              font-size: $small-size;
+              position: absolute;
+              transition: right .3s ease;
+              @include scale-styles((
+                      "bottom": -$size-2,
+                      "right": -$size-4
+              ));
+            }
+          }
         }
       }
 
@@ -348,6 +391,8 @@
         width: 100%;
         transform: rotate(20deg);
         z-index: 1;
+        transition: transform .3s ease, opacity .3s ease;
+        opacity: 1;
       }
     }
   }

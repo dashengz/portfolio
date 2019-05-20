@@ -18,6 +18,11 @@
   white-space: nowrap;
   user-select: none;
   touch-action: manipulation;
+  background-image: none;
+  border: none;
+  line-height: 1.6;
+  cursor: pointer;
+  outline: none;
   @include scale-styles((
           "padding-top": $size-1,
           "padding-right": $size-2,

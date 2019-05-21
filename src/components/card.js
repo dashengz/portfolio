@@ -3,18 +3,18 @@ import PropTypes from "prop-types"
 import Img from 'gatsby-image'
 
 const Card = ({id, title, blurb, thumbnail}) => (
-    <div className="card" data-id={id}>
+    <li className="card" data-id={id}>
         <div className="card-body">
             <div className="card-content">
-                <h3>{title}</h3>
+                <h3><a href={'?portfolio=' + id}>{title}</a></h3>
                 {blurb ? (
                     <div className="card-blurb">{blurb}
-                        <div className="card-action"><a href={'?portfolio=' + id}>View Project Detail</a></div>
+                        <div className="card-action">View Project Detail</div>
                     </div>) : null}
             </div>
             {thumbnail ? <div className="card-thumbnail"><Img fluid={thumbnail}/></div> : null}
         </div>
-    </div>
+    </li>
 );
 
 Card.defaultProps = {

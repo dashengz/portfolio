@@ -91,6 +91,7 @@ a {
 
   &:focus, &:hover {
     background-color: $accent-light;
+    outline: 2px dotted $primary-bright;
   }
 }
 

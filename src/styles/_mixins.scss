@@ -103,3 +103,12 @@
     }
   }
 }
+
+@mixin focus-state {
+  &:focus, &:hover {
+    @content;
+  }
+  &:focus-within {
+    @content;
+  }
+}

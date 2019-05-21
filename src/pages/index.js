@@ -145,7 +145,7 @@ class IndexPage extends Component {
                                 }
                             </ul>
                         </div>
-                        <div className="portfolio-cards">
+                        <ul className="portfolio-cards">
                             {
                                 data.portfolio.edges.map(e => {
                                     const meta = e.node.frontmatter;
@@ -159,7 +159,7 @@ class IndexPage extends Component {
                                     />;
                                 })
                             }
-                        </div>
+                        </ul>
                     </div>
                 </section>
                 <section id="contact">

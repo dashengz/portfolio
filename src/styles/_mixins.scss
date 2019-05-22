@@ -41,6 +41,18 @@
   }
 }
 
+@mixin extra-large-desktop-only {
+  @media (min-width: #{$large-desktop}) and (max-width: #{$extra-large-desktop - .5px}) {
+    @content;
+  }
+}
+
+@mixin extra-large-desktop {
+  @media (max-width: #{$extra-large-desktop - 1px}) {
+    @content;
+  }
+}
+
 @mixin lt-tablet {
   @media (max-width: #{$tablet - .5px}) {
     @content;
@@ -55,9 +67,16 @@
 
 // scaling
 @mixin scale-styles($styles, $viewports: $viewports) {
-  @if (null != index($viewports, 'xl')) {
+  @if (null != index($viewports, 'xxl')) {
     @each $name, $val in $styles {
       #{$name}: $val;
+    }
+  }
+  @if (null != index($viewports, 'xl')) {
+    @include extra-large-desktop {
+      @each $name, $val in $styles {
+        #{$name}: $val * map_get($scales, 'xl');
+      }
     }
   }
   @if (null != index($viewports, 'lg')) {
@@ -84,8 +103,13 @@
 }
 
 @mixin scale-calc($name, $before, $after, $val, $viewports: $viewports) {
-  @if (null != index($viewports, 'xl')) {
+  @if (null != index($viewports, 'xxl')) {
     #{$name}: calc(#{$before + $val + $after});
+  }
+  @if (null != index($viewports, 'xl')) {
+    @include extra-large-desktop {
+      #{$name}: calc(#{$before + $val * map_get($scales, 'xl') + $after});
+    }
   }
   @if (null != index($viewports, 'lg')) {
     @include desktop {

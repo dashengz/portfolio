@@ -166,6 +166,10 @@
       left: calc(50% - 3px);
       background-color: $primary-light;
       z-index: 5;
+      @include tablet {
+        left: -3px;
+        background-color: $primary-bright;
+      }
     }
   }
 
@@ -173,6 +177,9 @@
     $right: '#experiences .timeline[data-align="right"]';
     $left: '#experiences .timeline[data-align="left"]';
     position: relative;
+    @include scale-styles((
+            "margin-top": $size-6
+    ), ('md', 'sm', 'xs'));
 
     &:after {
       content: '';
@@ -185,6 +192,10 @@
       z-index: 10;
       border: 5px solid $primary-light;
       border-radius: 50%;
+      @include tablet {
+        left: -12px;
+        border-color: $primary-bright;
+      }
     }
 
     &-label {
@@ -195,14 +206,34 @@
       @include scale-styles((
               "font-size": 1.1rem
       ));
-      @include scale-calc("width", "50% - ", "", $size-6);
+      @include scale-calc("width", "50% - ", "", $size-6, ('xxl', 'xl', 'lg'));
+      @include tablet {
+        width: auto;
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        background-color: $accent-color;
+        color: $background-white;
+      }
+      @include scale-styles((
+              "padding": $size-0
+      ), ('md', 'sm', 'xs'));
       @at-root #{$right} .timeline-label {
         text-align: right;
         left: 0;
+        @include tablet {
+          text-align: left;
+        }
+        @include scale-styles((
+                "left": $size-4
+        ), ("md", "sm", "xs"));
       }
       @at-root #{$left} .timeline-label {
         text-align: left;
         right: 0;
+        @include scale-styles((
+                "left": $size-4
+        ), ("md", "sm", "xs"));
       }
     }
 
@@ -212,9 +243,13 @@
       @include scale-styles((
               "padding-top": $size-6,
               "padding-bottom": $size-6 * 2
-      ));
-
-      > div {
+      ), ("xxl", "xl", "lg"));
+      @include scale-styles((
+              "padding-top": $size-2,
+              "padding-bottom": $size-4
+      ), ("md", "sm", "xs"));
+      @include tablet {
+        display: block;
         position: relative;
       }
     }
@@ -223,21 +258,57 @@
       flex: 1;
       // opacity: .5;
       z-index: 1;
+      position: relative;
       @include scale-styles((
               "bottom": -$size-6
-      ));
+      ), ("xxl", "xl", "lg"));
+      @include scale-styles((
+              "max-height": 300px,
+              "top": -$size-6
+      ), ("md", "sm", "xs"));
+      @include tablet {
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        opacity: .2;
+      }
       @at-root #{$right} .timeline-background {
         @include scale-styles((
-                "left": $size-6,
+                "left": $size-6
+        ), ("xxl", "xl", "lg"));
+        @include scale-styles((
+                "left": -$container-horizontal-padding,
+                "right": -$container-horizontal-padding
+        ), ("md", "sm", "xs"));
+        @include scale-styles((
                 "margin-left": $size-2 * 8
-        ));
+        ), ('xxl'));
+        @include scale-styles((
+                "margin-left": $size-2 * 4
+        ), ('xl'));
+        @include scale-styles((
+                "margin-left": 0
+        ), ('lg', 'md', 'sm', 'xs'));
+
       }
       @at-root #{$left} .timeline-background {
         order: 2;
         @include scale-styles((
-                "right": $size-6,
+                "right": $size-6
+        ), ("xxl", "xl", "lg"));
+        @include scale-styles((
+                "left": -$container-horizontal-padding,
+                "right": -$container-horizontal-padding
+        ), ("md", "sm", "xs"));
+        @include scale-styles((
                 "margin-right": $size-2 * 8
-        ));
+        ), ('xxl'));
+        @include scale-styles((
+                "margin-right": $size-2 * 4
+        ), ('xl'));
+        @include scale-styles((
+                "margin-right": 0
+        ), ('lg', 'md', 'sm', 'xs'));
       }
     }
 
@@ -245,13 +316,20 @@
       background-color: $background-white;
       box-shadow: $light-shadow;
       z-index: 2;
+      position: relative;
       @include scale-styles((
               "padding-top": $size-2,
               "padding-right": $size-4,
               "padding-bottom": $size-2,
               "padding-left": $size-4
       ));
-      @include scale-calc("width", "50% - ", "", $size-6);
+      @include scale-calc("width", "50% - ", "", $size-6, ("xxl", "xl", "lg"));
+      @include tablet {
+        width: auto;
+      }
+      @include scale-styles((
+              "margin-left": $size-4
+      ), ("md", "sm", "xs"));
       @at-root #{$left} .timeline-content {
         order: 1;
       }
@@ -353,8 +431,8 @@
       }
 
       h3 {
-        position: relative;
-        z-index: 2;
+        //position: relative;
+        //z-index: 2;
         text-align: right;
         @include scale-styles((
                 "margin-left": $size-4,
@@ -365,6 +443,16 @@
 
         a {
           color: $accent-color;
+
+          &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+          }
         }
       }
 

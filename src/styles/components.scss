@@ -7,3 +7,65 @@
     ));
   }
 }
+
+#nav-toggler {
+  $current: &;
+  $scale: 0.6;
+  position: fixed;
+  padding: .25rem .5rem;
+  top: 1rem * $scale;
+  left: 1rem * $scale;
+  z-index: 200;
+  background: none;
+  background-color: $background-white;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  outline: none;
+  box-shadow: $light-shadow;
+  @include gt-tablet {
+    display: none;
+  }
+  &.active {
+    outline: 2px dotted $primary-bright;
+    box-shadow: none;
+  }
+  &:focus, &:hover {
+    background-color: $accent-light;
+  }
+  div {
+    position: relative;
+    width: 45px * $scale;
+    height: 45px * $scale;
+    span {
+      position: absolute;
+      left: 0;
+      height: 5px * $scale;
+      width: 100%;
+      background-color: $primary-color;
+      transform: rotate(0deg) translate(0,0);
+      transition: width .3s ease, transform .3s ease .3s;
+      &:nth-child(1) {
+        top: 5px * $scale;
+        @at-root #{selector-replace(&, $current, $current + ".active")} {
+          transform: rotate(45deg) translate(10px * $scale, 10px * $scale);
+        }
+      }
+      &:nth-child(2) {
+        top: 20px * $scale;
+        @at-root #{selector-replace(&, $current, $current + ".active")} {
+          width: 0;
+        }
+      }
+      &:nth-child(3) {
+        top: 35px * $scale;
+        @at-root #{selector-replace(&, $current, $current + ".active")} {
+          transform: rotate(-45deg) translate(10px * $scale, -10px * $scale);
+        }
+      }
+    }
+  }
+}

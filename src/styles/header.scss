@@ -6,10 +6,19 @@ header {
   height: 100%;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, .08);
   z-index: 100;
+  transition: left .3s ease;
   @include scale-styles((
           "width": $sidebar-width,
           "padding": $size-4
   ));
+  @include scale-styles((
+          "padding-top": $size-6 * 2,
+          "left": -$sidebar-width
+  ), ("sm"));
+
+  &.open {
+    left: 0;
+  }
 
   nav {
     @include scale-styles((

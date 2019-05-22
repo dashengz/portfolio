@@ -32,7 +32,10 @@ main {
   padding: 0;
   @include scale-styles((
           "margin-left": $sidebar-width
-  ));
+  ), ("xxl", "xl", "lg", "md"));
+  @include scale-styles((
+          "margin-left": 0
+  ), ("sm"));
 }
 
 section {
@@ -62,7 +65,11 @@ footer {
   @include scale-styles((
           "width": $sidebar-width,
           "padding": $size-4
-  ));
+  ), ("xxl", "xl", "lg", "md"));
+  @include large-mobile {
+    position: static;
+    width: auto;
+  }
 }
 
 hr {

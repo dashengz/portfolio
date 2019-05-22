@@ -2,8 +2,8 @@ import React from "react"
 import {graphql, StaticQuery} from "gatsby"
 import Img from 'gatsby-image'
 
-const Header = () => (
-    <header>
+const Header = ({open}) => (
+    <header className={open ? 'open' : null}>
         <div>
             <StaticQuery
                 query={graphql`

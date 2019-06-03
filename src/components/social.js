@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, StaticQuery} from "gatsby"
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const Social = () => (
     <div className="social">
@@ -21,9 +22,9 @@ const Social = () => (
                 `}
                 render={({site}) => Object.keys(site.siteMetadata.social).map(name => (
                     <span key={name}>
-                        <a href={site.siteMetadata.social[name]} target="_blank" rel="noopener noreferrer">
+                        <OutboundLink href={site.siteMetadata.social[name]} target="_blank" rel="noopener noreferrer">
                             <i className={'icon icon-' + name} aria-hidden="true"></i><span className="sr-only">{name}</span>
-                        </a>
+                        </OutboundLink>
                     </span>
                 ))}
             />

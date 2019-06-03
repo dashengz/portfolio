@@ -1,6 +1,7 @@
 import React from "react"
 import {graphql, StaticQuery} from "gatsby"
 import Img from 'gatsby-image'
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const Header = ({open}) => (
     <header className={open ? 'open' : null}>
@@ -26,7 +27,7 @@ const Header = ({open}) => (
                         <li><a href="#cv">CV</a></li>
                         <li><a href="#experiences">Experiences</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="https://blog.dashengz.com">Blog</a></li>
+                        <li><OutboundLink href="https://blog.dashengz.com">Blog</OutboundLink></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>

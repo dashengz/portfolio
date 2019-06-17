@@ -1,6 +1,6 @@
-import React from "react"
-import {graphql, StaticQuery} from "gatsby"
-import Img from 'gatsby-image'
+import React from "react";
+import {graphql, StaticQuery, Link} from "gatsby";
+import Img from 'gatsby-image';
 import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const Header = ({open}) => (
@@ -23,12 +23,12 @@ const Header = ({open}) => (
             <div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#cv">CV</a></li>
-                        <li><a href="#experiences">Experiences</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><Link to="/#home">Home</Link></li>
+                        <li><Link to="/#cv">CV</Link></li>
+                        <li><Link to="/#experiences">Experiences</Link></li>
+                        <li><Link to="/#portfolio">Portfolio</Link></li>
                         <li><OutboundLink href="https://blog.dashengz.com">Blog</OutboundLink></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><Link to="/#contact">Contact</Link></li>
                     </ul>
                 </nav>
             </div>

@@ -3,12 +3,12 @@
  * General Template
  */
 
-import React, {Component} from "react"
-import PropTypes from "prop-types"
-import {StaticQuery, graphql} from "gatsby"
+import React, {Component} from "react";
+import PropTypes from "prop-types";
+import {StaticQuery, graphql, Link} from "gatsby";
 
-import Header from "./header"
-import '../styles/styles.scss'
+import Header from "./header";
+import '../styles/styles.scss';
 import Social from "./social";
 
 class Layout extends Component {
@@ -48,7 +48,7 @@ class Layout extends Component {
                             <div>
                                 © Jonathan Dasheng Zhang &middot; {new Date().getFullYear()}
                                 <br/>
-                                Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+                                <Link to="/privacy-policy">Privacy Policy</Link>
                             </div>
                         </footer>
                     </>

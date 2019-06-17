@@ -48,6 +48,7 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        `gatsby-transformer-javascript-frontmatter`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {

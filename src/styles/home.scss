@@ -450,7 +450,7 @@
           a {
             background-color: $accent-light;
             outline: 2px dotted $primary-bright;
-            position: relative;
+            //position: relative;
             z-index: 3;
             //&:after {
             //  position: absolute;
@@ -498,7 +498,9 @@
 
       a {
         color: $accent-color;
-
+        @include lt-tablet {
+          position: relative;
+        }
         &:after {
           @include gt-tablet {
             position: absolute;
@@ -508,9 +510,6 @@
             right: 0;
             bottom: 0;
             z-index: 3;
-          }
-          @include lt-tablet {
-            position: relative;
           }
         }
       }

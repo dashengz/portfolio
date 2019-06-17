@@ -88,7 +88,7 @@ class IndexPage extends Component {
                             {
                                 data.portfolio.edges.map(e => {
                                     const meta = e.node.frontmatter;
-                                    const thumb = data.portfolioThumbnails.edges.filter(k => k.node.name === [meta.category, meta.id].join('.'));
+                                    const thumb = data.portfolioThumbnails.edges.filter(k => k.node.name === meta.id);
                                     return <Card
                                         key={meta.id}
                                         id={meta.id}
@@ -208,7 +208,10 @@ export const query = graphql`
                 }
             }
         }
-        portfolioThumbnails: allFile(filter: {relativePath: { regex: "/portfolio(.*)png/" }}) {
+        portfolioThumbnails: allFile(filter: {
+                sourceInstanceName: { eq: "portfolio" },
+                extension: { eq: "png" }
+            }) {
             edges {
                 node {
                     name

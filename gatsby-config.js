@@ -70,6 +70,13 @@ module.exports = {
                 path: `${__dirname}/src/markdowns`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `portfolio`,
+                path: `${__dirname}/src/portfolio`,
+            },
+        },
         `gatsby-transformer-remark`,
         `gatsby-plugin-offline`,
         {
@@ -86,7 +93,7 @@ module.exports = {
                     {
                         family: `Lora`,
                         subsets: [`latin`, `latin-ext`],
-                        variants: [`400`, `400i`]
+                        variants: [`400`, `400i`, `700`, `700i`]
                     },
                     {
                         family: `Open Sans`,

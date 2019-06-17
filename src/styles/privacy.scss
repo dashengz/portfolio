@@ -5,14 +5,14 @@
 
   ul {
     @include scale-styles((
-            'margin-bottom': 1rem
+            'margin-bottom': $size-2
     ));
   }
 
   hr {
     @include scale-styles((
-            'margin-top': 2rem,
-            'margin-bottom': 2rem
+            'margin-top': $size-4,
+            'margin-bottom': $size-4
     ));
   }
 }

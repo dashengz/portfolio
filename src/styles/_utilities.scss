@@ -47,4 +47,14 @@
           "padding-right": $container-horizontal-padding,
           "padding-left": $container-horizontal-padding
   ));
+  &.thin {
+    @include scale-styles((
+            "padding-right": $container-thin-horizontal-padding,
+            "padding-left": $container-thin-horizontal-padding
+    ), ("xxl", "xl", "lg"));
+    @include scale-styles((
+            "padding-right": $container-horizontal-padding,
+            "padding-left": $container-horizontal-padding
+    ), ("md", "sm"));
+  }
 }

@@ -6,12 +6,8 @@ type: "Web App"
 sequence: 5
 title: "Filter and Display Widget"
 blurb: "Easy-to-use search and filter interface with pagination and tagging system"
+keywords: ""
 
 ---
 
-# Filter and Display Widget
-
-Easy-to-use search and filter interface with pagination and tagging system
-
----
 
